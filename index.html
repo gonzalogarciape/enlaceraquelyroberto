@@ -1038,7 +1038,7 @@
                 <p>Por favor, confirma tu asistencia antes del 15 de septiembre de 2025</p>
             </div>
             <div class="form-wrapper">
-                <form id="rsvp-form">
+                <form id="rsvp-form" action="https://formspree.io/f/mvgayvza" method="POST">
                     <div class="form-group">
                         <label for="name">Nombre completo:</label>
                         <input type="text" id="name" name="name" required placeholder="Tu nombre y apellidos">
@@ -1064,11 +1064,11 @@
                         <label>¿Asistirás?</label>
                         <div class="radio-group">
                             <div class="radio-option">
-                                <input type="radio" id="attend-yes" name="attendance" value="yes" required>
+                                <input type="radio" id="attend-yes" name="attendance" value="Sí" required>
                                 <label for="attend-yes">Sí, asistiré</label>
                             </div>
                             <div class="radio-option">
-                                <input type="radio" id="attend-no" name="attendance" value="no">
+                                <input type="radio" id="attend-no" name="attendance" value="No">
                                 <label for="attend-no">No podré asistir</label>
                             </div>
                         </div>
@@ -1076,21 +1076,21 @@
                     <div class="form-group">
                         <label for="menu">Preferencia de menú:</label>
                         <select id="menu" name="menu">
-                            <option value="tradicional">Menú Tradicional</option>
-                            <option value="vegetariano">Menú Vegetariano</option>
-                            <option value="vegano">Menú Vegano</option>
-                            <option value="gluten-free">Sin Gluten</option>
+                            <option value="Tradicional">Menú Tradicional</option>
+                            <option value="Vegetariano">Menú Vegetariano</option>
+                            <option value="Vegano">Menú Vegano</option>
+                            <option value="Sin Gluten">Sin Gluten</option>
                         </select>
                     </div>
                     <div class="form-group">
                         <label>¿Consumirás alcohol?</label>
                         <div class="radio-group">
                             <div class="radio-option">
-                                <input type="radio" id="alcohol-yes" name="alcohol" value="yes">
+                                <input type="radio" id="alcohol-yes" name="alcohol" value="Sí">
                                 <label for="alcohol-yes">Sí</label>
                             </div>
                             <div class="radio-option">
-                                <input type="radio" id="alcohol-no" name="alcohol" value="no">
+                                <input type="radio" id="alcohol-no" name="alcohol" value="No">
                                 <label for="alcohol-no">No</label>
                             </div>
                         </div>
@@ -1103,6 +1103,10 @@
                         <label for="message">Mensaje para los novios (opcional):</label>
                         <textarea id="message" name="message" placeholder="Escribe un mensaje para Raquel y Roberto"></textarea>
                     </div>
+                    
+                    <!-- Campo oculto para el asunto del email -->
+                    <input type="hidden" name="_subject" value="Confirmación de Asistencia - Boda Raquel y Roberto">
+                    
                     <button type="submit">Enviar Confirmación</button>
                 </form>
             </div>
@@ -1305,28 +1309,6 @@
                         this.classList.add('active');
                         answer.classList.add('active');
                     }
-                });
-            });
-
-            // Formulario RSVP
-            const form = document.getElementById('rsvp-form');
-            form.addEventListener('submit', function(e) {
-                e.preventDefault();
-                alert('¡Gracias por confirmar tu asistencia! Hemos recibido tus preferencias.');
-                form.reset();
-            });
-
-            // Smooth scrolling
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    
-                    // Close mobile menu if open
-                    nav.classList.remove('active');
-                    
-                    document.querySelector(this.getAttribute('href')).scrollIntoView({
-                        behavior: 'smooth'
-                    });
                 });
             });
 

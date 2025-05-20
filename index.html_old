@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Raquel & Roberto - Nuestra Boda</title>
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="images/ryr-favicon.ico" type="image/x-icon">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Alex+Brush&family=Cormorant+Garamond:wght@300;400;500;600&family=Montserrat:wght@300;400;500&display=swap');
@@ -73,20 +75,17 @@
             align-items: center;
         }
 
+        /* Logo texto en lugar de imagen */
         .logo {
-            display: flex;
-            align-items: center;
+            font-family: 'Alex Brush', cursive;
+            font-size: 2.2rem;
+            color: var(--primary-color);
+            text-decoration: none;
+            transition: color 0.3s ease;
         }
         
-        .logo-img {
-            height: 60px;
-            width: auto;
-            max-width: 100%;
-            transition: height 0.3s ease;
-        }
-        
-        header.scrolled .logo-img {
-            height: 45px;  /* Logo más pequeño al hacer scroll */
+        .logo:hover {
+            color: var(--text-color);
         }
 
         .nav-toggle {
@@ -155,6 +154,13 @@
             position: relative;
             color: var(--text-color);
             box-shadow: var(--shadow);
+        }
+        
+        /* Logo grande en el hero */
+        .hero-logo {
+            width: 180px;
+            margin: 0 auto 30px;
+            display: block;
         }
         
         .hero-content::before {
@@ -760,12 +766,13 @@
         }
 
         @media (max-width: 768px) {
-            .logo-img {
-                height: 45px;  /* Logo más pequeño en dispositivos móviles */
+            .logo {
+                font-size: 1.8rem;
             }
             
-            header.scrolled .logo-img {
-                height: 35px;
+            .hero-logo {
+                width: 140px;
+                margin-bottom: 20px;
             }
             
             .hero h1 {
@@ -842,6 +849,11 @@
         }
 
         @media (max-width: 576px) {
+            .hero-logo {
+                width: 120px;
+                margin-bottom: 15px;
+            }
+            
             section {
                 padding: 50px 0;
             }
@@ -917,9 +929,8 @@
 <body>
     <header id="header">
         <div class="container header-container">
-            <a href="#" class="logo">
-                <img src="ryr-logo.png" alt="Raquel & Roberto" class="logo-img">
-            </a>
+            <!-- Texto en lugar de logo -->
+            <a href="#" class="logo">Raquel & Roberto</a>
             <div class="nav-toggle" id="nav-toggle">
                 <i class="fas fa-bars"></i>
             </div>
@@ -941,7 +952,9 @@
         <div class="hero-content">
             <div class="floral-decoration floral-top-left"></div>
             <div class="floral-decoration floral-bottom-right"></div>
-            <h1>Raquel & Roberto</h1>
+            <!-- Logo grande en el hero -->
+            <img src="images/ryr-logo.png" alt="Raquel & Roberto" class="hero-logo">
+            <!-- <h1>Raquel & Roberto</h1> -->
             <p>Celebramos nuestro amor y queremos compartirlo contigo</p>
             <div class="date">18 de Octubre, 2025</div>
             <a href="#rsvp" class="btn">Confirmar Asistencia</a>
@@ -1011,7 +1024,6 @@
                         </div>
                         <h3>Código de Vestimenta</h3>
                         <p>Elegante</p>
-                        <p>Se recomienda evitar el color blanco</p>
                         <p>La ceremonia se realizará al aire libre</p>
                     </div>
                 </div>

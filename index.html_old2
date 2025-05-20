@@ -9,15 +9,15 @@
         @import url('https://fonts.googleapis.com/css2?family=Alex+Brush&family=Cormorant+Garamond:wght@300;400;500;600&family=Montserrat:wght@300;400;500&display=swap');
         
         :root {
-            --primary-color: #8B5A4C;
-            --secondary-color: #F9F1EC;
-            --accent-color: #D4A47C;
-            --text-color: #5D4037;
-            --light-text: #9C7A6B;
-            --white: #ffffff;
-            --light-bg: #FBF7F5;
-            --gold: #D4AF37;
-            --shadow: 0 5px 20px rgba(0,0,0,0.05);
+            --primary-color: #D7C69A;    /* Champán */
+            --secondary-color: #F9F6F0;  /* Blanco roto */
+            --accent-color: #E6D7B9;     /* Champán claro */
+            --text-color: #8C7853;       /* Marrón dorado */
+            --light-text: #BDAD8E;       /* Champán claro para textos */
+            --white: #ffffff;            /* Blanco puro */
+            --light-bg: #FFFDF7;         /* Fondo ligeramente crema */
+            --gold: #D7C69A;             /* Oro champán */
+            --shadow: 0 5px 20px rgba(215,198,154,0.1);
         }
 
         * {
@@ -74,18 +74,19 @@
         }
 
         .logo {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.8rem;
-            color: var(--primary-color);
-            text-decoration: none;
+            display: flex;
+            align-items: center;
         }
-
-        .logo span {
-            font-size: 1.2rem;
-            display: block;
-            color: var(--light-text);
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 300;
+        
+        .logo-img {
+            height: 60px;
+            width: auto;
+            max-width: 100%;
+            transition: height 0.3s ease;
+        }
+        
+        header.scrolled .logo-img {
+            height: 45px;  /* Logo más pequeño al hacer scroll */
         }
 
         .nav-toggle {
@@ -135,7 +136,7 @@
         /* Hero Section */
         .hero {
             height: 100vh;
-            background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('https://images.unsplash.com/photo-1513278974582-3e1b4a4fa21e?q=80&w=1000&auto=format&fit=crop') center/cover no-repeat;
+            background: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('https://images.unsplash.com/photo-1513278974582-3e1b4a4fa21e?q=80&w=1000&auto=format&fit=crop') center/cover no-repeat;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -209,7 +210,7 @@
 
         .btn:hover {
             background-color: transparent;
-            color: var(--white);
+            color: var(--primary-color);
         }
 
         .btn-outline {
@@ -365,7 +366,7 @@
             box-shadow: var(--shadow);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             position: relative;
-            border: 1px solid rgba(212, 175, 55, 0.3);
+            border: 1px solid rgba(215, 198, 154, 0.3);
         }
 
         .card::before {
@@ -375,7 +376,7 @@
             left: 10px;
             right: 10px;
             bottom: 10px;
-            border: 1px solid rgba(212, 175, 55, 0.5);
+            border: 1px solid rgba(215, 198, 154, 0.5);
             border-radius: 8px;
             pointer-events: none;
             z-index: 1;
@@ -383,7 +384,7 @@
 
         .card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            box-shadow: 0 10px 30px rgba(215, 198, 154, 0.2);
         }
 
         .card-body {
@@ -426,19 +427,19 @@
         input, select, textarea {
             width: 100%;
             padding: 12px 15px;
-            border: 1px solid #ddd;
+            border: 1px solid #E6D7B9;
             border-radius: 8px;
             font-size: 1rem;
             font-family: 'Montserrat', sans-serif;
             color: var(--text-color);
             transition: border-color 0.3s ease;
-            background-color: #fafafa;
+            background-color: #FFFDF7;
         }
 
         input:focus, select:focus, textarea:focus {
             outline: none;
             border-color: var(--primary-color);
-            box-shadow: 0 0 0 3px rgba(148, 97, 142, 0.1);
+            box-shadow: 0 0 0 3px rgba(215, 198, 154, 0.1);
         }
 
         textarea {
@@ -759,6 +760,14 @@
         }
 
         @media (max-width: 768px) {
+            .logo-img {
+                height: 45px;  /* Logo más pequeño en dispositivos móviles */
+            }
+            
+            header.scrolled .logo-img {
+                height: 35px;
+            }
+            
             .hero h1 {
                 font-size: 4rem;
             }
@@ -777,7 +786,7 @@
                 left: 0;
                 width: 100%;
                 background-color: var(--white);
-                box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+                box-shadow: 0 10px 20px rgba(215,198,154,0.1);
                 max-height: 0;
                 overflow: hidden;
                 transition: max-height 0.3s ease;
@@ -908,7 +917,9 @@
 <body>
     <header id="header">
         <div class="container header-container">
-            <a href="#" class="logo">R&R</a>
+            <a href="#" class="logo">
+                <img src="ryr-logo.png" alt="Raquel & Roberto" class="logo-img">
+            </a>
             <div class="nav-toggle" id="nav-toggle">
                 <i class="fas fa-bars"></i>
             </div>
@@ -932,6 +943,7 @@
             <div class="floral-decoration floral-bottom-right"></div>
             <h1>Raquel & Roberto</h1>
             <p>Celebramos nuestro amor y queremos compartirlo contigo</p>
+            <div class="date">18 de Octubre, 2025</div>
             <a href="#rsvp" class="btn">Confirmar Asistencia</a>
         </div>
     </section>
@@ -977,8 +989,8 @@
                         </div>
                         <h3>Fecha y Hora</h3>
                         <p>Sábado, 18 de Octubre de 2025</p>
-                        <p>Ceremonia: 13:30h</p>
-                        <p>Recepción: 12:30h</p>
+                        <p>Ceremonia: 17:00h</p>
+                        <p>Recepción: 18:30h</p>
                     </div>
                 </div>
                 <div class="card">
