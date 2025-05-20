@@ -1,56 +1,4 @@
-        /* Decorative Elements */
-        .floral-decoration {
-            position: absolute;
-            width: 200px;
-            height: 200px;
-            background-image: url('/api/placeholder/200/200');
-            background-size: contain;
-            background-repeat: no-repeat;
-            z-index: 1;
-            opacity: 0.9;
-        }
-        
-        .floral-top-left {
-            top: -30px;
-            left: -30px;
-            transform: rotate(-15deg);
-        }
-        
-        .floral-bottom-right {
-            bottom: -30px;
-            right: -30px;
-            transform: rotate(165deg);
-        }
-        
-        .section-decoration {
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .section-decoration::before,
-        .section-decoration::after {
-            content: '';
-            position: absolute;
-            width: 150px;
-            height: 150px;
-            background-image: url('/api/placeholder/150/150');
-            background-size: contain;
-            background-repeat: no-repeat;
-            opacity: 0.4;
-            z-index: 0;
-        }
-        
-        .section-decoration::before {
-            top: 50px;
-            left: -50px;
-            transform: rotate(-15deg);
-        }
-        
-        .section-decoration::after {
-            bottom: 50px;
-            right: -50px;
-            transform: rotate(165deg);
-        }<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -81,14 +29,15 @@
         body {
             color: var(--text-color);
             background-color: var(--light-bg);
-            font-family: 'Montserrat', sans-serif;
+            font-family: 'Cormorant Garamond', serif;
             line-height: 1.8;
             overflow-x: hidden;
+            font-size: 18px;
         }
 
         h1, h2, h3, h4, h5 {
-            font-family: 'Playfair Display', serif;
-            font-weight: 700;
+            font-family: 'Alex Brush', cursive;
+            font-weight: 400;
         }
 
         .container {
@@ -186,7 +135,7 @@
         /* Hero Section */
         .hero {
             height: 100vh;
-            background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('/api/placeholder/1200/800') center/cover no-repeat;
+            background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('https://images.unsplash.com/photo-1513278974582-3e1b4a4fa21e?q=80&w=1000&auto=format&fit=crop') center/cover no-repeat;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -273,6 +222,60 @@
             color: var(--primary-color);
         }
 
+        /* Decorative Elements */
+        .floral-decoration {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            background-image: url('https://images.unsplash.com/photo-1580173146236-c785e5625c1e?q=80&w=300&auto=format&fit=crop');
+            background-size: contain;
+            background-repeat: no-repeat;
+            z-index: 1;
+            opacity: 0.7;
+        }
+        
+        .floral-top-left {
+            top: -30px;
+            left: -30px;
+            transform: rotate(-15deg);
+        }
+        
+        .floral-bottom-right {
+            bottom: -30px;
+            right: -30px;
+            transform: rotate(165deg);
+        }
+        
+        .section-decoration {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .section-decoration::before,
+        .section-decoration::after {
+            content: '';
+            position: absolute;
+            width: 150px;
+            height: 150px;
+            background-image: url('https://images.unsplash.com/photo-1508359673976-a743c9e9f79c?q=80&w=300&auto=format&fit=crop');
+            background-size: contain;
+            background-repeat: no-repeat;
+            opacity: 0.3;
+            z-index: 0;
+        }
+        
+        .section-decoration::before {
+            top: 50px;
+            left: -50px;
+            transform: rotate(-15deg);
+        }
+        
+        .section-decoration::after {
+            bottom: 50px;
+            right: -50px;
+            transform: rotate(165deg);
+        }
+
         /* Countdown Section */
         .countdown-section {
             padding: 80px 0;
@@ -324,7 +327,7 @@
         }
 
         .section-title h2 {
-            font-size: 2.8rem;
+            font-size: 3.5rem;
             color: var(--primary-color);
             margin-bottom: 15px;
         }
@@ -342,9 +345,9 @@
             bottom: 0;
             left: 50%;
             transform: translateX(-50%);
-            width: 80px;
-            height: 3px;
-            background-color: var(--accent-color);
+            width: 120px;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--gold), transparent);
         }
 
         /* Details Cards */
@@ -757,11 +760,11 @@
 
         @media (max-width: 768px) {
             .hero h1 {
-                font-size: 3rem;
+                font-size: 4rem;
             }
 
             .hero p, .hero .date {
-                font-size: 1.2rem;
+                font-size: 1.4rem;
             }
 
             .nav-toggle {
@@ -799,7 +802,7 @@
 
             .countdown-item {
                 margin: 10px;
-                min-width: 100px;
+                min-width: 80px;
             }
 
             .countdown-number {
@@ -807,18 +810,31 @@
             }
 
             .section-title h2 {
-                font-size: 2.2rem;
+                font-size: 2.8rem;
             }
 
             .radio-group {
                 flex-direction: column;
                 gap: 15px;
             }
+            
+            .hero-content {
+                padding: 40px 30px;
+            }
+            
+            .form-wrapper {
+                padding: 30px 20px;
+            }
+            
+            .btn {
+                font-size: 0.85rem;
+                padding: 12px 25px;
+            }
         }
 
         @media (max-width: 576px) {
             section {
-                padding: 60px 0;
+                padding: 50px 0;
             }
             
             .hero {
@@ -826,21 +842,32 @@
             }
 
             .hero h1 {
-                font-size: 2.5rem;
+                font-size: 3.5rem;
+            }
+
+            .hero p {
+                font-size: 1.2rem;
             }
 
             .hero .date {
-                font-size: 1rem;
+                font-size: 1.2rem;
                 margin: 15px 0 30px;
+            }
+
+            .hero-content {
+                padding: 30px 20px;
+                width: 90%;
             }
 
             .btn {
                 padding: 10px 25px;
                 font-size: 0.8rem;
+                width: 100%;
+                margin-bottom: 10px;
             }
 
             .countdown-item {
-                min-width: 80px;
+                min-width: 70px;
             }
 
             .countdown-number {
@@ -852,7 +879,28 @@
             }
 
             .form-wrapper {
-                padding: 30px 20px;
+                padding: 25px 15px;
+            }
+            
+            .section-title h2 {
+                font-size: 2.6rem;
+            }
+            
+            .card {
+                margin-bottom: 20px;
+            }
+            
+            input, select, textarea {
+                font-size: 1rem;
+                padding: 14px 15px;
+            }
+            
+            .timeline-item {
+                margin-bottom: 30px;
+            }
+            
+            .timeline-time {
+                font-size: 1.4rem;
             }
         }
     </style>
@@ -860,7 +908,7 @@
 <body>
     <header id="header">
         <div class="container header-container">
-            <a href="#" class="logo">R&R <span>18.10.2025</span></a>
+            <a href="#" class="logo">R&R</a>
             <div class="nav-toggle" id="nav-toggle">
                 <i class="fas fa-bars"></i>
             </div>
@@ -884,7 +932,6 @@
             <div class="floral-decoration floral-bottom-right"></div>
             <h1>Raquel & Roberto</h1>
             <p>Celebramos nuestro amor y queremos compartirlo contigo</p>
-            <div class="date">18 de Octubre, 2025</div>
             <a href="#rsvp" class="btn">Confirmar Asistencia</a>
         </div>
     </section>
@@ -892,7 +939,7 @@
     <section id="countdown" class="countdown-section section-decoration">
         <div class="container">
             <div class="section-title">
-                <h2>Cuenta Atrás</h2>
+                <h2>Nuestra Cuenta Atrás</h2>
                 <p>El día más especial de nuestras vidas está cada vez más cerca</p>
             </div>
             <div class="countdown-container" id="countdown">
@@ -929,7 +976,7 @@
                             <i class="fas fa-calendar-alt"></i>
                         </div>
                         <h3>Fecha y Hora</h3>
-                        <p>Sábado, 18 de Octubre de 2026</p>
+                        <p>Sábado, 18 de Octubre de 2025</p>
                         <p>Ceremonia: 13:30h</p>
                         <p>Recepción: 12:30h</p>
                     </div>
@@ -941,8 +988,8 @@
                         </div>
                         <h3>Lugar</h3>
                         <p>Restaurante Martino</p>
-                        <p> Av. de Dolores, Km 6</p>
-                        <p>Elche, Alicante</p>
+                        <p>Av. de Dolores, Km 6</p>
+                        <p>Elche, España</p>
                     </div>
                 </div>
                 <div class="card">
@@ -1045,12 +1092,12 @@
                 <p>Te esperamos en este lugar tan especial</p>
             </div>
             <div class="location-info">
-                <h3>Jardines La Hacienda</h3>
-                <p class="location-address">Partida de Puçol, 8, 03295 Elche, Alicante</p>
-                <a href="https://maps.app.goo.gl/qFFe67" class="btn" target="_blank">Ver en Google Maps</a>
+                <h3>Restaurante Martino</h3>
+                <p class="location-address">Av. de Dolores, Km 6, 700, 03293 Elx, Alicante</p>
+                <a href="https://maps.app.goo.gl/fXtwnD2kz53cYLhL6" class="btn" target="_blank">Ver en Google Maps</a>
             </div>
             <div class="map-container">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3133.598774450145!2d-0.7077908842988068!3d38.27673867966795!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd63b7a82c4d403d%3A0x8ee6c0cbb0253643!2sJardines%20La%20Hacienda!5e0!3m2!1ses!2ses!4v1653123456789!5m2!1ses!2ses" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5246.418960562028!2d-0.7035813228161674!3d38.19589658778838!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd63b6ecb8aedb89%3A0x665307ae2d6f49db!2sRestaurante%20Martino!5e1!3m2!1ses!2ses!4v1747658657309!5m2!1ses!2ses" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
         </div>
     </section>
